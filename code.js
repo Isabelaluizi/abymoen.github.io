@@ -208,10 +208,13 @@ function isNotNewline(txt) {
 }
           
 function isNotSeperator(txt) {
-    if(txt == "\n" || txt == "\t" || txt == "\v" || txt == "\f" || txt == " " || txt == "." || txt == "," || txt == "-" || txt == "!" || txt == "?" || txt == "@" || txt == "#" || txt == "+" || txt == ":" || txt == ")" || txt == "(" || txt == "/" || txt == "\\" || txt == '"' || txt == "'") {
-        return false;
-    }
-    return true;
+	var numRE = new RegExp('[0-9]');
+	var letterRE = new RegExp('[a-z]');
+	if(numRE.test(txt) || letterRE.test(txt)) {
+		console.log(txt);
+		return true;
+	}
+    return false;
 }
 
 function isOnlyWhite(txt) {
