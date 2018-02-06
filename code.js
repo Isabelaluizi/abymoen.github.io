@@ -208,10 +208,10 @@ function isNotNewline(txt) {
 }
           
 function isNotSeperator(txt) {
+    txt = txt.toLowerCase();
 	var numRE = new RegExp('[0-9]');
 	var letterRE = new RegExp('[a-z]');
 	if(numRE.test(txt) || letterRE.test(txt)) {
-		console.log(txt);
 		return true;
 	}
     return false;
